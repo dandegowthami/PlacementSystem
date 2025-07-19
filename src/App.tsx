@@ -2,25 +2,109 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { AuthProvider, useAuth } from "@/contexts/AuthContext";
+import { ProtectedRoute } from "@/components/ProtectedRoute";
+import { Navbar } from "@/components/Layout/Navbar";
+
+// Pages
+import { Home } from "./pages/Home";
+import { Login } from "./pages/Login";
+import { Register } from "./pages/Register";
+import { Unauthorized } from "./pages/Unauthorized";
+import { StudentDashboard } from "./pages/student/StudentDashboard";
+import { RecruiterDashboard } from "./pages/recruiter/RecruiterDashboard";
+import { AdminDashboard } from "./pages/admin/AdminDashboard";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+const DashboardLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  return (
+    <div className="min-h-screen bg-background">
+      <Navbar />
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {children}
+      </main>
+    </div>
+  );
+};
+
+const RoleBasedRedirect: React.FC = () => {
+  const { user } = useAuth();
+  
+  if (!user) return <Navigate to="/login" replace />;
+  
+  switch (user.role) {
+    case 'admin':
+      return <Navigate to="/admin/dashboard" replace />;
+    case 'recruiter':
+      return <Navigate to="/recruiter/dashboard" replace />;
+    case 'student':
+      return <Navigate to="/student/dashboard" replace />;
+    default:
+      return <Navigate to="/login" replace />;
+  }
+};
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
+    <AuthProvider>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Routes>
+            {/* Index redirect */}
+            <Route path="/index" element={<Index />} />
+            
+            {/* Public Routes */}
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/unauthorized" element={<Unauthorized />} />
+            
+            {/* Dashboard Route - Role-based redirect */}
+            <Route path="/dashboard" element={
+              <ProtectedRoute>
+                <RoleBasedRedirect />
+              </ProtectedRoute>
+            } />
+            
+            {/* Student Routes */}
+            <Route path="/student/dashboard" element={
+              <ProtectedRoute allowedRoles={['student']}>
+                <DashboardLayout>
+                  <StudentDashboard />
+                </DashboardLayout>
+              </ProtectedRoute>
+            } />
+            
+            {/* Recruiter Routes */}
+            <Route path="/recruiter/dashboard" element={
+              <ProtectedRoute allowedRoles={['recruiter']}>
+                <DashboardLayout>
+                  <RecruiterDashboard />
+                </DashboardLayout>
+              </ProtectedRoute>
+            } />
+            
+            {/* Admin Routes */}
+            <Route path="/admin/dashboard" element={
+              <ProtectedRoute allowedRoles={['admin']}>
+                <DashboardLayout>
+                  <AdminDashboard />
+                </DashboardLayout>
+              </ProtectedRoute>
+            } />
+            
+            {/* Catch-all route */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </AuthProvider>
   </QueryClientProvider>
 );
 
