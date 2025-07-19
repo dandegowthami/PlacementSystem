@@ -69,7 +69,10 @@ export const StudentDashboard: React.FC = () => {
             Track your placement progress and manage applications
           </p>
         </div>
-        <Button className="bg-gradient-to-r from-primary to-primary-glow">
+        <Button 
+          className="bg-gradient-to-r from-primary to-primary-glow"
+          onClick={() => window.location.href = '/notifications'}
+        >
           <Bell className="mr-2 h-4 w-4" />
           View Notifications
         </Button>
@@ -148,7 +151,11 @@ export const StudentDashboard: React.FC = () => {
                 </div>
               </div>
             ))}
-            <Button variant="outline" className="w-full">
+            <Button 
+              variant="outline" 
+              className="w-full"
+              onClick={() => window.location.href = '/student/applications'}
+            >
               View All Applications
             </Button>
           </CardContent>
@@ -196,11 +203,19 @@ export const StudentDashboard: React.FC = () => {
         </CardHeader>
         <CardContent>
           <div className="grid gap-4 md:grid-cols-3">
-            <Button variant="outline" className="h-auto flex flex-col items-center space-y-2 p-6">
+            <Button 
+              variant="outline" 
+              className="h-auto flex flex-col items-center space-y-2 p-6"
+              onClick={() => window.location.href = '/jobs'}
+            >
               <Briefcase className="h-6 w-6 text-primary" />
               <span>Browse Jobs</span>
             </Button>
-            <Button variant="outline" className="h-auto flex flex-col items-center space-y-2 p-6">
+            <Button 
+              variant="outline" 
+              className="h-auto flex flex-col items-center space-y-2 p-6"
+              onClick={() => window.location.href = '/student/profile'}
+            >
               <FileText className="h-6 w-6 text-primary" />
               <span>Update Profile</span>
             </Button>

@@ -13,8 +13,13 @@ import { Login } from "./pages/Login";
 import { Register } from "./pages/Register";
 import { Unauthorized } from "./pages/Unauthorized";
 import { StudentDashboard } from "./pages/student/StudentDashboard";
+import { StudentApplications } from "./pages/student/StudentApplications";
+import { StudentProfile } from "./pages/student/StudentProfile";
 import { RecruiterDashboard } from "./pages/recruiter/RecruiterDashboard";
 import { AdminDashboard } from "./pages/admin/AdminDashboard";
+import { JobListings } from "./pages/JobListings";
+import { JobDetails } from "./pages/JobDetails";
+import { Notifications } from "./pages/Notifications";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
@@ -80,6 +85,20 @@ const App = () => (
                 </DashboardLayout>
               </ProtectedRoute>
             } />
+            <Route path="/student/applications" element={
+              <ProtectedRoute allowedRoles={['student']}>
+                <DashboardLayout>
+                  <StudentApplications />
+                </DashboardLayout>
+              </ProtectedRoute>
+            } />
+            <Route path="/student/profile" element={
+              <ProtectedRoute allowedRoles={['student']}>
+                <DashboardLayout>
+                  <StudentProfile />
+                </DashboardLayout>
+              </ProtectedRoute>
+            } />
             
             {/* Recruiter Routes */}
             <Route path="/recruiter/dashboard" element={
@@ -95,6 +114,29 @@ const App = () => (
               <ProtectedRoute allowedRoles={['admin']}>
                 <DashboardLayout>
                   <AdminDashboard />
+                </DashboardLayout>
+              </ProtectedRoute>
+            } />
+            
+            {/* Shared Routes */}
+            <Route path="/jobs" element={
+              <ProtectedRoute>
+                <DashboardLayout>
+                  <JobListings />
+                </DashboardLayout>
+              </ProtectedRoute>
+            } />
+            <Route path="/job/:id" element={
+              <ProtectedRoute>
+                <DashboardLayout>
+                  <JobDetails />
+                </DashboardLayout>
+              </ProtectedRoute>
+            } />
+            <Route path="/notifications" element={
+              <ProtectedRoute>
+                <DashboardLayout>
+                  <Notifications />
                 </DashboardLayout>
               </ProtectedRoute>
             } />
