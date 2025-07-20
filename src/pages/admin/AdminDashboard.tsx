@@ -16,14 +16,11 @@ import {
   GraduationCap
 } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
-<<<<<<< HEAD
 import {  Settings as SettingsIcon } from 'lucide-react';
 
 import dashboardPreview from '@/assets/dashboard-preview.jpg';
 import { Link } from 'react-router-dom';
-=======
 import dashboardPreview from '@/assets/dashboard-preview.jpg';
->>>>>>> caabc2acc5ab5c4223b6884a1ae572faa0399306
 
 export const AdminDashboard: React.FC = () => {
   const { user } = useAuth();
