@@ -40,27 +40,18 @@
     "@radix-ui/react-toggle-group": "^1.1.0",
     "@radix-ui/react-tooltip": "^1.1.4",
     "@tanstack/react-query": "^5.56.2",
-<<<<<<< HEAD
     "chart.js": "^4.5.0",
-=======
->>>>>>> caabc2acc5ab5c4223b6884a1ae572faa0399306
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.0.0",
     "date-fns": "^3.6.0",
     "embla-carousel-react": "^8.3.0",
-<<<<<<< HEAD
     "file-saver": "^2.0.5",
-=======
->>>>>>> caabc2acc5ab5c4223b6884a1ae572faa0399306
     "input-otp": "^1.2.4",
     "lucide-react": "^0.462.0",
     "next-themes": "^0.3.0",
     "react": "^18.3.1",
-<<<<<<< HEAD
     "react-chartjs-2": "^5.3.0",
-=======
->>>>>>> caabc2acc5ab5c4223b6884a1ae572faa0399306
     "react-day-picker": "^8.10.1",
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.53.0",
@@ -77,11 +68,7 @@
     "@eslint/js": "^9.9.0",
     "@tailwindcss/typography": "^0.5.15",
     "@types/node": "^22.5.5",
-<<<<<<< HEAD
     "@types/react": "^18.3.23",
-=======
-    "@types/react": "^18.3.3",
->>>>>>> caabc2acc5ab5c4223b6884a1ae572faa0399306
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react-swc": "^3.5.0",
     "autoprefixer": "^10.4.20",
