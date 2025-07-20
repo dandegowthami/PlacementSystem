@@ -4,6 +4,11 @@ A full-stack web application designed to streamline and automate campus placemen
 
 ---
 
+Check out the live version of the project here:  
+🔗 [Live Demo](https://placement-system-zkda.vercel.app/)
+
+
+
 ## ✨ Features
 
 ### 👨‍🎓 Student Dashboard
