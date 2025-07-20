@@ -15,8 +15,16 @@ import { Unauthorized } from "./pages/Unauthorized";
 import { StudentDashboard } from "./pages/student/StudentDashboard";
 import { StudentApplications } from "./pages/student/StudentApplications";
 import { StudentProfile } from "./pages/student/StudentProfile";
+import { StudentInterviews } from "./pages/student/StudentInterviews";
 import { RecruiterDashboard } from "./pages/recruiter/RecruiterDashboard";
+import { RecruiterPostJob } from "./pages/recruiter/RecruiterPostJob";
+import { RecruiterMyJobs } from "./pages/recruiter/RecruiterMyJobs";
+import { RecruiterApplicants } from "./pages/recruiter/RecruiterApplicants";
+import { RecruiterInterviews } from "./pages/recruiter/RecruiterInterviews";
 import { AdminDashboard } from "./pages/admin/AdminDashboard";
+import { AdminUserManagement } from "./pages/admin/AdminUserManagement";
+import { AdminAnalytics } from "./pages/admin/AdminAnalytics";
+import { AdminJobDrives } from "./pages/admin/AdminJobDrives";
 import { JobListings } from "./pages/JobListings";
 import { JobDetails } from "./pages/JobDetails";
 import { Notifications } from "./pages/Notifications";
@@ -99,6 +107,13 @@ const App = () => (
                 </DashboardLayout>
               </ProtectedRoute>
             } />
+            <Route path="/student/interviews" element={
+              <ProtectedRoute allowedRoles={['student']}>
+                <DashboardLayout>
+                  <StudentInterviews />
+                </DashboardLayout>
+              </ProtectedRoute>
+            } />
             
             {/* Recruiter Routes */}
             <Route path="/recruiter/dashboard" element={
@@ -108,12 +123,61 @@ const App = () => (
                 </DashboardLayout>
               </ProtectedRoute>
             } />
+            <Route path="/recruiter/post-job" element={
+              <ProtectedRoute allowedRoles={['recruiter']}>
+                <DashboardLayout>
+                  <RecruiterPostJob />
+                </DashboardLayout>
+              </ProtectedRoute>
+            } />
+            <Route path="/recruiter/my-jobs" element={
+              <ProtectedRoute allowedRoles={['recruiter']}>
+                <DashboardLayout>
+                  <RecruiterMyJobs />
+                </DashboardLayout>
+              </ProtectedRoute>
+            } />
+            <Route path="/recruiter/applicants/:jobId" element={
+              <ProtectedRoute allowedRoles={['recruiter']}>
+                <DashboardLayout>
+                  <RecruiterApplicants />
+                </DashboardLayout>
+              </ProtectedRoute>
+            } />
+            <Route path="/recruiter/interviews" element={
+              <ProtectedRoute allowedRoles={['recruiter']}>
+                <DashboardLayout>
+                  <RecruiterInterviews />
+                </DashboardLayout>
+              </ProtectedRoute>
+            } />
             
             {/* Admin Routes */}
             <Route path="/admin/dashboard" element={
               <ProtectedRoute allowedRoles={['admin']}>
                 <DashboardLayout>
                   <AdminDashboard />
+                </DashboardLayout>
+              </ProtectedRoute>
+            } />
+            <Route path="/admin/users" element={
+              <ProtectedRoute allowedRoles={['admin']}>
+                <DashboardLayout>
+                  <AdminUserManagement />
+                </DashboardLayout>
+              </ProtectedRoute>
+            } />
+            <Route path="/admin/analytics" element={
+              <ProtectedRoute allowedRoles={['admin']}>
+                <DashboardLayout>
+                  <AdminAnalytics />
+                </DashboardLayout>
+              </ProtectedRoute>
+            } />
+            <Route path="/admin/job-drives" element={
+              <ProtectedRoute allowedRoles={['admin']}>
+                <DashboardLayout>
+                  <AdminJobDrives />
                 </DashboardLayout>
               </ProtectedRoute>
             } />
