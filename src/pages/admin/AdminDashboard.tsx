@@ -16,10 +16,14 @@ import {
   GraduationCap
 } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
+<<<<<<< HEAD
 import {  Settings as SettingsIcon } from 'lucide-react';
 
 import dashboardPreview from '@/assets/dashboard-preview.jpg';
 import { Link } from 'react-router-dom';
+=======
+import dashboardPreview from '@/assets/dashboard-preview.jpg';
+>>>>>>> caabc2acc5ab5c4223b6884a1ae572faa0399306
 
 export const AdminDashboard: React.FC = () => {
   const { user } = useAuth();
@@ -244,6 +248,7 @@ export const AdminDashboard: React.FC = () => {
 
       {/* Quick Actions */}
       <Card className="border-border shadow-elegant">
+<<<<<<< HEAD
   <CardHeader>
     <CardTitle>Administrative Actions</CardTitle>
     <CardDescription>Common administrative tasks</CardDescription>
@@ -290,6 +295,33 @@ export const AdminDashboard: React.FC = () => {
   </CardContent>
 </Card>
 
+=======
+        <CardHeader>
+          <CardTitle>Administrative Actions</CardTitle>
+          <CardDescription>Common administrative tasks</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="grid gap-4 md:grid-cols-4">
+            <Button variant="outline" className="h-auto flex flex-col items-center space-y-2 p-6">
+              <UserCheck className="h-6 w-6 text-primary" />
+              <span>Verify Users</span>
+            </Button>
+            <Button variant="outline" className="h-auto flex flex-col items-center space-y-2 p-6">
+              <Briefcase className="h-6 w-6 text-primary" />
+              <span>Manage Drives</span>
+            </Button>
+            <Button variant="outline" className="h-auto flex flex-col items-center space-y-2 p-6">
+              <TrendingUp className="h-6 w-6 text-primary" />
+              <span>View Analytics</span>
+            </Button>
+            <Button variant="outline" className="h-auto flex flex-col items-center space-y-2 p-6">
+              <FileText className="h-6 w-6 text-primary" />
+              <span>Generate Reports</span>
+            </Button>
+          </div>
+        </CardContent>
+      </Card>
+>>>>>>> caabc2acc5ab5c4223b6884a1ae572faa0399306
     </div>
   );
 };
