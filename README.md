@@ -1,73 +1,59 @@
-# Welcome to your Lovable project
+# 🎓 AutoPlace – Automated Placement Management System
 
-## Project info
+A full-stack MERN web application designed to streamline and automate the campus placement process for Students, TPOs (Training & Placement Officers), and Recruiters. This system ensures seamless management of student profiles, company drives, and recruitment data.
 
-**URL**: https://lovable.dev/projects/40e7506e-4d7a-4d94-b6a3-6c227dbd24a0
+---
 
-## How can I edit this code?
+## 🔍 Overview
 
-There are several ways of editing your application.
+**AutoPlace** provides role-based dashboards and automation tools for:
+- Students to track placements and apply to jobs.
+- TPOs to manage student data, conduct drives, and generate reports.
+- Recruiters to post jobs and shortlist candidates efficiently.
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/40e7506e-4d7a-4d94-b6a3-6c227dbd24a0) and start prompting.
+## 🚀 Features
 
-Changes made via Lovable will be committed automatically to this repo.
+### 👨‍🎓 Student Module
+- Register/Login & role-based access
+- View & update profile
+- View eligible job drives
+- Apply/Withdraw applications
+- Track placement status (Applied, Shortlisted, Selected, Rejected)
 
-**Use your preferred IDE**
+### 🧑‍💼 TPO/Admin Module
+- Add/Edit/Delete student records
+- Create & manage company drives
+- View applicant list & filter
+- Update placement statuses
+- Export analytics & reports (CSV/PDF)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### 🏢 Recruiter Module
+- Company registration & login
+- Post job opportunities with eligibility criteria
+- View student profiles & resumes
+- Shortlist applicants
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### 📊 General Features
+- JWT-based Authentication & Authorization
+- Role-based protected routes
+- Real-time notifications via email
+- Resume upload and storage
+- Analytics dashboard: placement rate, top companies, etc.
 
-Follow these steps:
+---
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## 🛠 Tech Stack
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+| Layer        | Technology           |
+|--------------|----------------------|
+| Frontend     | React.js, Tailwind CSS / Bootstrap |
+| Backend      | Node.js, Express.js  |
+| Database     | MongoDB (Cloud: Atlas) |
+| Auth         | JWT                  |
+| Version Control | Git, GitHub       |
 
-# Step 3: Install the necessary dependencies.
-npm i
+---
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
 
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/40e7506e-4d7a-4d94-b6a3-6c227dbd24a0) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
