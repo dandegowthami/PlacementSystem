@@ -245,7 +245,7 @@ export const AdminDashboard: React.FC = () => {
 
       {/* Quick Actions */}
       <Card className="border-border shadow-elegant">
-<<<<<<< HEAD
+
   <CardHeader>
     <CardTitle>Administrative Actions</CardTitle>
     <CardDescription>Common administrative tasks</CardDescription>
@@ -292,7 +292,6 @@ export const AdminDashboard: React.FC = () => {
   </CardContent>
 </Card>
 
-=======
         <CardHeader>
           <CardTitle>Administrative Actions</CardTitle>
           <CardDescription>Common administrative tasks</CardDescription>
@@ -318,7 +317,6 @@ export const AdminDashboard: React.FC = () => {
           </div>
         </CardContent>
       </Card>
->>>>>>> caabc2acc5ab5c4223b6884a1ae572faa0399306
     </div>
   );
 };
