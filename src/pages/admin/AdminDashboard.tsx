@@ -20,7 +20,6 @@ import {  Settings as SettingsIcon } from 'lucide-react';
 
 import dashboardPreview from '@/assets/dashboard-preview.jpg';
 import { Link } from 'react-router-dom';
-import dashboardPreview from '@/assets/dashboard-preview.jpg';
 
 export const AdminDashboard: React.FC = () => {
   const { user } = useAuth();
@@ -245,14 +244,12 @@ export const AdminDashboard: React.FC = () => {
 
       {/* Quick Actions */}
       <Card className="border-border shadow-elegant">
-
   <CardHeader>
     <CardTitle>Administrative Actions</CardTitle>
     <CardDescription>Common administrative tasks</CardDescription>
   </CardHeader>
   <CardContent>
     <div className="grid gap-4 md:grid-cols-4">
-      
       <Link to="/admin/verify-users">
         <Button variant="outline" className="h-auto flex flex-col items-center space-y-2 p-6 w-full">
           <UserCheck className="h-6 w-6 text-primary" />
@@ -287,36 +284,10 @@ export const AdminDashboard: React.FC = () => {
           <span>Settings</span>
         </Button>
       </Link>
-
     </div>
   </CardContent>
 </Card>
 
-        <CardHeader>
-          <CardTitle>Administrative Actions</CardTitle>
-          <CardDescription>Common administrative tasks</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="grid gap-4 md:grid-cols-4">
-            <Button variant="outline" className="h-auto flex flex-col items-center space-y-2 p-6">
-              <UserCheck className="h-6 w-6 text-primary" />
-              <span>Verify Users</span>
-            </Button>
-            <Button variant="outline" className="h-auto flex flex-col items-center space-y-2 p-6">
-              <Briefcase className="h-6 w-6 text-primary" />
-              <span>Manage Drives</span>
-            </Button>
-            <Button variant="outline" className="h-auto flex flex-col items-center space-y-2 p-6">
-              <TrendingUp className="h-6 w-6 text-primary" />
-              <span>View Analytics</span>
-            </Button>
-            <Button variant="outline" className="h-auto flex flex-col items-center space-y-2 p-6">
-              <FileText className="h-6 w-6 text-primary" />
-              <span>Generate Reports</span>
-            </Button>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 };
